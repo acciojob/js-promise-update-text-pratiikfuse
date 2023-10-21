@@ -1,7 +1,6 @@
 //your JS code here. If required.
-async function fun(){
-	return setTimeOut(()=>"Hello, World!",1000);
-}
-fun().then((res)=>{
-	document.getElementById("output").innerText  = res;
+setTimeOut(()=>new Promise((res,rej)=>{
+	res("Hello, World!");
+}),1000).then((res)=>{
+	document.getElementById("output").innerText = res;
 })
